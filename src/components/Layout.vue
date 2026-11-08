@@ -82,6 +82,7 @@
             </el-icon>
             <template #title>现有数据预测</template>
           </el-menu-item>
+          <el-menu-item index="/prediction/image"><el-icon><Picture/></el-icon><template #title>图像数据预测</template></el-menu-item>
         </el-sub-menu>
 
         <el-menu-item index="/integrated">
@@ -154,7 +155,8 @@ import {
   Delete,
   CirclePlus,
   DocumentAdd,
-  Document
+  Document,
+  Picture
 } from '@element-plus/icons-vue'
 
 export default {
@@ -174,7 +176,8 @@ export default {
     Delete,
     CirclePlus,
     DocumentAdd,
-    Document
+    Document,
+    Picture
   },
   setup() {
     const router = useRouter()

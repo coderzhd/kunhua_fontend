@@ -6,6 +6,7 @@ import DataStatistics from '../views/statistics/DataStatistics.vue'
 import AIPrediction from '../views/prediction/AIPrediction.vue'
 import NewDataPrediction from '../views/prediction/NewDataPrediction.vue'
 import PredictionLayout from '../views/prediction/PredictionLayout.vue'
+import ImageDataPrediction from '../views/prediction/ImageDataPrediction.vue'
 import DataManagementLayout from '../views/management/DataManagementLayout.vue'
 import IntegratedPage from '../views/integrated/IntegratedPage.vue'
 import AddPatientData from '../views/management/AddPatientData.vue'
@@ -56,7 +57,8 @@ const routes = [
             name: 'ExistingDataPrediction',
             component: AIPrediction,
             meta: { requiresAuth: true }
-          }
+          },
+          { path: 'image', name: 'ImageDataPrediction', component: ImageDataPrediction, meta: { requiresAuth: true } }
         ]
       },
       {

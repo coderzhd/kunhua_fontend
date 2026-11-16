@@ -215,6 +215,14 @@ export default {
     }
     const CACHE_EXPIRY = 30 * 60 * 1000 // 30分钟过期
 
+    // 数据源或统计口径变更时递增版本，避免继续展示旧缓存。
+    const CACHE_VERSION = '2'
+    const CACHE_VERSION_KEY = 'statistics_cache_version'
+    if (localStorage.getItem(CACHE_VERSION_KEY) !== CACHE_VERSION) {
+      Object.values(CACHE_KEYS).forEach(key => localStorage.removeItem(key))
+      localStorage.setItem(CACHE_VERSION_KEY, CACHE_VERSION)
+    }
+
     // 检查缓存是否有效
     const isCacheValid = (cacheKey) => {
       const cached = localStorage.getItem(cacheKey)
